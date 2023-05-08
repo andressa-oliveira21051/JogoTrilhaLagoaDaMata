@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class colisaocarta : MonoBehaviour
 {
-    public GameObject Carta;
+    public GameObject Desafio;
+
+    public Transform Desafiot;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "peao")
-        {
-            Carta.SetActive(true);
+        Instantiate(Desafio, Desafiot.position, Desafiot.rotation);
 
-        }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "peao")
-        {
-            Carta.SetActive(false);
-
-        }
-    }
 }
